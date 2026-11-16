@@ -15,7 +15,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
 
   if (!steps.length) {
     return (
-      <div className="rounded-xl border border-border bg-surface p-5 text-sm text-secondary">
+      <div className="card p-5 text-sm text-secondary">
         No Dijkstra steps available yet
       </div>
     );
@@ -50,7 +50,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
 
   return (
     <div className="grid gap-4">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-surface px-4 py-3">
+      <div className="flex flex-wrap items-center justify-between gap-3 card px-4 py-3">
         <div>
           <p className="text-sm text-muted">{title}</p>
           <h3 className="mt-1 text-lg font-medium text-foreground">
@@ -75,7 +75,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
                 className={`rounded-lg px-3 py-2 text-sm transition-colors ${
                   isRouteMode
                     ? "bg-foreground text-surface"
-                    : "border border-border text-secondary hover:bg-raised"
+                    : "border border-black text-secondary hover:bg-raised"
                 }`}
               >
                 Shortest hops
@@ -86,7 +86,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
                 className={`rounded-lg px-3 py-2 text-sm transition-colors ${
                   !isRouteMode
                     ? "bg-foreground text-surface"
-                    : "border border-border text-secondary hover:bg-raised"
+                    : "border border-black text-secondary hover:bg-raised"
                 }`}
               >
                 Dijkstra steps
@@ -98,7 +98,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
             type="button"
             onClick={goPrev}
             disabled={prevDisabled}
-            className="rounded-lg border border-border px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised disabled:opacity-40"
+            className="rounded-lg border border-black px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised disabled:opacity-40"
           >
             Prev
           </button>
@@ -120,7 +120,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
       />
 
       <div className="grid gap-4 lg:grid-cols-2">
-        <div className="rounded-xl border border-border bg-surface p-5">
+        <div className="card p-5">
           <p className="text-sm text-muted">Currently visiting</p>
           <p className="mt-2 font-mono text-2xl font-medium text-foreground">
             {step.visited}
@@ -138,7 +138,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-surface p-5">
+        <div className="card p-5">
           <p className="text-sm text-muted">Previous links</p>
           <div className="mt-3 space-y-2">
             {allNodes.map((node) => (
@@ -156,7 +156,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-border bg-surface">
+      <div className="overflow-hidden card">
         <table className="w-full text-left text-sm">
           <thead className="bg-raised text-secondary">
             <tr>
@@ -172,7 +172,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
                 className={
                   node === step.visited
                     ? "bg-accent-soft"
-                    : "border-t border-border"
+                    : "border-t border-black"
                 }
               >
                 <td className="px-4 py-3 font-mono text-foreground">{node}</td>

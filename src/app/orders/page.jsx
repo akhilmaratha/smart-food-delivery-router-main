@@ -40,7 +40,7 @@ export default function OrdersPage() {
       title="All orders"
       description="Every order in the in-memory store. Mark an assigned delivery as complete to free the rider."
     >
-      <div className="overflow-hidden rounded-xl border border-border bg-surface">
+      <div className="overflow-hidden card">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[720px] text-left text-sm">
             <thead className="bg-raised text-secondary">
@@ -57,14 +57,14 @@ export default function OrdersPage() {
             <tbody>
               {data.orders.length ? (
                 data.orders.map((order) => (
-                  <tr key={order.id} className="border-t border-border text-foreground">
+                  <tr key={order.id} className="border-t border-black text-foreground">
                     <td className="px-4 py-3 font-mono text-xs">{order.id}</td>
                     <td className="px-4 py-3">{order.customerName}</td>
                     <td className="px-4 py-3 font-mono text-xs">{order.pickup}</td>
                     <td className="px-4 py-3 font-mono text-xs">{order.drop}</td>
                     <td className="px-4 py-3">{order.assignedRider?.name ?? "—"}</td>
                     <td className="px-4 py-3">
-                      <span className="rounded-md bg-raised px-2 py-1 text-xs text-secondary">
+                      <span className="rounded-md border border-black bg-raised px-2 py-1 text-xs text-secondary">
                         {order.status}
                       </span>
                     </td>

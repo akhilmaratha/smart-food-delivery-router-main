@@ -43,7 +43,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-surface">
+      <header className="border-b border-black bg-surface">
         <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between px-6 lg:px-8">
           <div className="flex items-center gap-3">
             <span aria-hidden className="inline-block h-2 w-8 rounded-sm bg-accent" />
@@ -53,7 +53,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/routing"
-            className="rounded-lg border border-border px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
+            className="rounded-lg border border-black bg-surface px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
           >
             Open routing view
           </Link>
@@ -61,7 +61,7 @@ export default function HomePage() {
       </header>
 
       <main className="mx-auto grid min-h-[calc(100vh-56px)] max-w-[1440px] lg:grid-cols-[1fr_1fr]">
-        <section className="flex flex-col justify-center border-b border-border px-6 py-16 lg:border-b-0 lg:border-r lg:px-8 lg:py-20">
+        <section className="flex flex-col justify-center border-b border-black px-6 py-16 lg:border-b-0 lg:border-r lg:px-8 lg:py-20">
           <p className="text-sm text-muted">Delivery dispatch simulation</p>
           <h1 className="mt-4 max-w-xl text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
             Route food orders with graphs, Dijkstra, and greedy rider choice
@@ -79,10 +79,10 @@ export default function HomePage() {
                   key={role}
                   type="button"
                   onClick={() => chooseRole(role)}
-                  className={`rounded-xl border px-4 py-4 text-left transition-colors ${
+                  className={`card px-4 py-4 text-left transition-colors ${
                     active
-                      ? "border-accent bg-accent-soft"
-                      : "border-border bg-surface hover:bg-raised"
+                      ? "bg-accent-soft"
+                      : "hover:bg-raised"
                   }`}
                 >
                   <span className="block text-sm text-muted">Continue as</span>
@@ -99,7 +99,7 @@ export default function HomePage() {
         </section>
 
         <aside className="flex flex-col justify-center bg-surface px-6 py-16 lg:px-8 lg:py-20">
-          <div className="rounded-xl border border-border bg-background p-6">
+          <div className="card p-6">
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm text-muted">Signature route</p>
@@ -107,7 +107,9 @@ export default function HomePage() {
                   Rider to pickup to drop
                 </p>
               </div>
-              <span className="font-mono text-sm tabular text-muted">4 hops</span>
+              <span className="rounded-md border border-black px-2 py-1 font-mono text-xs tabular text-foreground">
+                4 hops
+              </span>
             </div>
 
             <div className="mt-8 space-y-0">
@@ -115,17 +117,17 @@ export default function HomePage() {
                 <div key={node} className="flex gap-4">
                   <div className="flex w-4 flex-col items-center">
                     <span
-                      className={`mt-1 h-3 w-3 rounded-full ${
+                      className={`mt-1 h-3 w-3 rounded-full border border-black ${
                         index === 0 || index === routePreview.length - 1
                           ? "bg-accent"
                           : "bg-foreground"
                       }`}
                     />
                     {index < routePreview.length - 1 ? (
-                      <span className="my-1 w-px flex-1 bg-border" />
+                      <span className="my-1 w-px flex-1 bg-black" />
                     ) : null}
                   </div>
-                  <div className={`pb-6 ${index === routePreview.length - 1 ? "pb-0" : ""}`}>
+                  <div className={index === routePreview.length - 1 ? "pb-0" : "pb-6"}>
                     <p className="font-mono text-sm text-foreground">{node}</p>
                     <p className="mt-1 text-sm text-muted">
                       {index === 0
@@ -141,11 +143,11 @@ export default function HomePage() {
           </div>
 
           <dl className="mt-6 grid grid-cols-2 gap-3">
-            <div className="rounded-xl border border-border bg-background px-4 py-4">
+            <div className="card px-4 py-4">
               <dt className="text-sm text-muted">DSA modules</dt>
               <dd className="mt-2 text-3xl font-medium tabular text-foreground">5</dd>
             </div>
-            <div className="rounded-xl border border-border bg-background px-4 py-4">
+            <div className="card px-4 py-4">
               <dt className="text-sm text-muted">City nodes</dt>
               <dd className="mt-2 text-3xl font-medium tabular text-foreground">8</dd>
             </div>

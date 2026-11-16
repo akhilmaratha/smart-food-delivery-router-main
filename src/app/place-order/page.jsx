@@ -54,7 +54,7 @@ export default function PlaceOrderPage() {
       actions={
         <Link
           href="/track-order"
-          className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
+          className="rounded-lg border border-black bg-surface px-4 py-2.5 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
         >
           Track an order
         </Link>
@@ -62,7 +62,7 @@ export default function PlaceOrderPage() {
     >
       <form
         onSubmit={submitOrder}
-        className="grid max-w-3xl gap-5 rounded-xl border border-border bg-surface p-6"
+        className="grid max-w-3xl gap-5 card p-6"
       >
         <div className="grid gap-5 md:grid-cols-2">
           <label className="grid gap-2 text-sm text-secondary">
@@ -70,7 +70,7 @@ export default function PlaceOrderPage() {
             <input
               value={customerName}
               onChange={(event) => setCustomerName(event.target.value)}
-              className="rounded-lg border border-border bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
+              className="rounded-lg border border-black bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
               placeholder="Your name"
             />
           </label>
@@ -79,7 +79,7 @@ export default function PlaceOrderPage() {
             <select
               value={pickup}
               onChange={(event) => setPickup(event.target.value)}
-              className="rounded-lg border border-border bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
+              className="rounded-lg border border-black bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
             >
               {cityNodes.map((node) => (
                 <option key={node} value={node}>
@@ -93,7 +93,7 @@ export default function PlaceOrderPage() {
             <select
               value={drop}
               onChange={(event) => setDrop(event.target.value)}
-              className="rounded-lg border border-border bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
+              className="rounded-lg border border-black bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
             >
               {cityNodes.map((node) => (
                 <option key={node} value={node}>
@@ -108,7 +108,7 @@ export default function PlaceOrderPage() {
               value={details}
               onChange={(event) => setDetails(event.target.value)}
               rows={4}
-              className="rounded-lg border border-border bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
+              className="rounded-lg border border-black bg-background px-3 py-2.5 text-foreground outline-none transition-colors focus:border-foreground"
               placeholder="Two biryani meals and one cold coffee"
             />
           </label>
@@ -124,13 +124,13 @@ export default function PlaceOrderPage() {
       </form>
 
       {status.error ? (
-        <div className="mt-4 max-w-3xl rounded-xl border border-danger/20 bg-danger-soft px-5 py-4 text-sm text-danger">
+        <div className="mt-4 max-w-3xl rounded-xl border border-black bg-danger-soft px-5 py-4 text-sm text-danger">
           {status.error}
         </div>
       ) : null}
 
       {status.order ? (
-        <div className="mt-4 max-w-3xl rounded-xl border border-success/20 bg-success-soft px-5 py-4">
+        <div className="mt-4 max-w-3xl rounded-xl border border-black bg-success-soft px-5 py-4">
           <p className="text-sm text-success">Order created</p>
           <p className="mt-2 text-base font-medium text-foreground">
             Waiting for a rider to accept this request

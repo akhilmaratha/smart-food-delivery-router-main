@@ -1,12 +1,6 @@
 export default function RiderCard({ rider, highlighted = false, actionSlot }) {
   return (
-    <article
-      className={`rounded-xl border p-5 ${
-        highlighted
-          ? "border-accent bg-accent-soft"
-          : "border-border bg-surface"
-      }`}
-    >
+    <article className={`card p-5 ${highlighted ? "bg-accent-soft" : ""}`}>
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="font-mono text-xs text-muted">Rider {rider.id}</p>
@@ -23,7 +17,7 @@ export default function RiderCard({ rider, highlighted = false, actionSlot }) {
         </div>
       </div>
       {typeof rider.distanceToPickup === "number" ? (
-        <div className="mt-4 rounded-lg bg-raised px-3 py-2 text-sm text-secondary">
+        <div className="mt-4 rounded-lg border border-black bg-raised px-3 py-2 text-sm text-secondary">
           Distance to pickup:{" "}
           <span className="font-mono tabular text-foreground">
             {rider.distanceToPickup}

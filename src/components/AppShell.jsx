@@ -23,7 +23,7 @@ export default function AppShell({
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-surface">
+      <header className="border-b border-black bg-surface">
         <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between gap-4 px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-3">
             <span
@@ -45,7 +45,7 @@ export default function AppShell({
                   href={link.href}
                   className={`rounded-lg px-3 py-2 text-sm transition-colors ${
                     active
-                      ? "bg-raised text-foreground"
+                      ? "border border-black bg-raised text-foreground"
                       : "text-secondary hover:bg-raised hover:text-foreground"
                   }`}
                 >
@@ -57,13 +57,13 @@ export default function AppShell({
 
           <Link
             href="/"
-            className="rounded-lg border border-border bg-surface px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
+            className="rounded-lg border border-black bg-surface px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
           >
             Change role
           </Link>
         </div>
 
-        <div className="border-t border-border md:hidden">
+        <div className="border-t border-black md:hidden">
           <div className="mx-auto flex max-w-[1440px] gap-1 overflow-x-auto px-4 py-2">
             {links.map((link) => {
               const active =

@@ -22,7 +22,7 @@ export default function GraphView({ graph, highlightPath = [], currentNode = "" 
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-raised p-4">
+    <div className="card overflow-hidden bg-raised p-4">
       <svg viewBox="0 0 740 420" className="h-auto w-full">
         {nodes.flatMap((node) =>
           (graph[node] ?? []).map((edge) => {

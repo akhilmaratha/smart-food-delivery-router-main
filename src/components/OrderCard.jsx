@@ -1,6 +1,6 @@
 export default function OrderCard({ order, actionSlot }) {
   return (
-    <article className="rounded-xl border border-border bg-surface p-5">
+    <article className="card p-5">
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="font-mono text-xs text-muted">Order {order.id}</p>
@@ -13,7 +13,7 @@ export default function OrderCard({ order, actionSlot }) {
             <span className="font-mono">{order.drop}</span>
           </p>
         </div>
-        <span className="rounded-md bg-raised px-2.5 py-1 text-xs font-medium text-secondary">
+        <span className="rounded-md border border-black bg-raised px-2.5 py-1 text-xs font-medium text-secondary">
           {order.status}
         </span>
       </div>

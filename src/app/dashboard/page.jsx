@@ -35,7 +35,7 @@ export default function DashboardPage() {
       actions={
         <Link
           href="/orders"
-          className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
+          className="rounded-lg border border-black bg-surface px-4 py-2.5 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
         >
           View all orders
         </Link>
@@ -50,7 +50,7 @@ export default function DashboardPage() {
         ].map((card) => (
           <div
             key={card.label}
-            className="rounded-xl border border-border bg-surface px-5 py-5"
+            className="card px-5 py-5"
           >
             <p className="text-sm text-muted">{card.label}</p>
             <p className="mt-3 text-4xl font-medium tabular text-foreground">
@@ -61,9 +61,9 @@ export default function DashboardPage() {
       </section>
 
       <section className="mt-6 grid gap-4 lg:grid-cols-[1.4fr_0.6fr]">
-        <div className="rounded-xl border border-border bg-surface p-5">
+        <div className="card p-5">
           <p className="text-sm text-muted">Recent orders</p>
-          <div className="mt-4 divide-y divide-border">
+          <div className="mt-4 divide-y divide-black">
             {data.orders.length ? (
               data.orders.slice(0, 6).map((order) => (
                 <div
@@ -87,7 +87,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="rounded-xl border border-border bg-surface p-5">
+        <div className="card p-5">
           <p className="text-sm text-muted">Rider bench</p>
           <ul className="mt-4 space-y-3">
             {data.riders.map((rider) => (

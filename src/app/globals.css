@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafafa;
+  --background: #f4f4f5;
   --surface: #ffffff;
   --raised: #f4f4f5;
-  --foreground: #171717;
-  --secondary: #525252;
+  --foreground: #0a0a0a;
+  --secondary: #404040;
   --muted: #737373;
-  --border: rgba(23, 23, 23, 0.08);
+  --border: #000000;
   --accent: #c2410c;
   --accent-soft: #fff7ed;
   --danger: #dc2626;
@@ -15,7 +15,7 @@
   --success: #16a34a;
   --success-soft: #f0fdf4;
   --route: #c2410c;
-  --node: #171717;
+  --node: #0a0a0a;
 }
 
 @theme inline {
@@ -71,4 +71,11 @@ button {
 
 .tabular {
   font-variant-numeric: tabular-nums;
+}
+
+/* Shared card surface: white fill + solid black border */
+.card {
+  border: 1px solid #000000;
+  border-radius: 12px;
+  background: #ffffff;
 }

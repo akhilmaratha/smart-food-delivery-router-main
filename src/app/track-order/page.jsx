@@ -34,13 +34,13 @@ export default function TrackOrderPage() {
     >
       <form
         onSubmit={findOrder}
-        className="flex max-w-2xl flex-col gap-3 rounded-xl border border-border bg-surface p-5 sm:flex-row sm:items-center"
+        className="flex max-w-2xl flex-col gap-3 card p-5 sm:flex-row sm:items-center"
       >
         <input
           value={orderId}
           onChange={(event) => setOrderId(event.target.value)}
           placeholder="Order ID"
-          className="flex-1 rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
+          className="flex-1 rounded-lg border border-black bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
         />
         <button
           type="submit"
@@ -60,19 +60,19 @@ export default function TrackOrderPage() {
       {result.order ? (
         <section className="mt-6 grid max-w-3xl gap-4">
           <div className="grid gap-3 sm:grid-cols-3">
-            <div className="rounded-xl border border-border bg-surface p-4">
+            <div className="card p-4">
               <p className="text-sm text-muted">Status</p>
               <p className="mt-2 text-xl font-medium text-foreground">
                 {result.order.status}
               </p>
             </div>
-            <div className="rounded-xl border border-border bg-surface p-4">
+            <div className="card p-4">
               <p className="text-sm text-muted">Assigned rider</p>
               <p className="mt-2 text-xl font-medium text-foreground">
                 {result.order.assignedRider?.name ?? "Not assigned"}
               </p>
             </div>
-            <div className="rounded-xl border border-border bg-surface p-4">
+            <div className="card p-4">
               <p className="text-sm text-muted">ETA</p>
               <p className="mt-2 text-xl font-medium tabular text-foreground">
                 {result.order.eta ? `${result.order.eta} mins` : "Pending"}
@@ -80,7 +80,7 @@ export default function TrackOrderPage() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-surface p-5 text-sm leading-7 text-secondary">
+          <div className="card p-5 text-sm leading-7 text-secondary">
             <p>
               Pickup:{" "}
               <span className="font-mono text-foreground">{result.order.pickup}</span>

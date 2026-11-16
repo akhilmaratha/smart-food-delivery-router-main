@@ -91,13 +91,13 @@ export default function RoutingClient() {
           event.preventDefault();
           setOrderIdInput(orderIdInput.trim());
         }}
-        className="flex max-w-2xl flex-col gap-3 rounded-xl border border-border bg-surface p-5 sm:flex-row sm:items-center"
+        className="flex max-w-2xl flex-col gap-3 card p-5 sm:flex-row sm:items-center"
       >
         <input
           value={orderIdInput}
           onChange={(event) => setOrderIdInput(event.target.value)}
           placeholder="Order ID"
-          className="flex-1 rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
+          className="flex-1 rounded-lg border border-black bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
         />
         <button
           type="submit"
@@ -110,17 +110,17 @@ export default function RoutingClient() {
       {order ? (
         <section className="mt-6 grid gap-6">
           <div className="grid gap-3 sm:grid-cols-3">
-            <div className="rounded-xl border border-border bg-surface p-4">
+            <div className="card p-4">
               <p className="text-sm text-muted">Status</p>
               <p className="mt-2 text-xl font-medium text-foreground">{order.status}</p>
             </div>
-            <div className="rounded-xl border border-border bg-surface p-4">
+            <div className="card p-4">
               <p className="text-sm text-muted">Assigned rider</p>
               <p className="mt-2 text-xl font-medium text-foreground">
                 {assignedRider?.name ?? "Not assigned"}
               </p>
             </div>
-            <div className="rounded-xl border border-border bg-surface p-4">
+            <div className="card p-4">
               <p className="text-sm text-muted">Total distance</p>
               <p className="mt-2 text-xl font-medium tabular text-foreground">
                 {routeDistance}
@@ -128,7 +128,7 @@ export default function RoutingClient() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-surface p-5">
+          <div className="card p-5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <p className="text-sm text-muted">Route steps</p>
@@ -139,7 +139,7 @@ export default function RoutingClient() {
               <button
                 type="button"
                 onClick={() => setDemoOpen((value) => !value)}
-                className="rounded-lg border border-border px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
+                className="rounded-lg border border-black px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
               >
                 {demoOpen ? "Hide DSA demo" : "Show DSA demo"}
               </button>
@@ -182,7 +182,7 @@ export default function RoutingClient() {
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 activeLeg === "pickup"
                   ? "bg-foreground text-surface"
-                  : "border border-border text-secondary hover:bg-raised"
+                  : "border border-black text-secondary hover:bg-raised"
               }`}
             >
               {legTitle.pickup}
@@ -193,7 +193,7 @@ export default function RoutingClient() {
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 activeLeg === "drop"
                   ? "bg-foreground text-surface"
-                  : "border border-border text-secondary hover:bg-raised"
+                  : "border border-black text-secondary hover:bg-raised"
               }`}
             >
               {legTitle.drop}
@@ -210,7 +210,7 @@ export default function RoutingClient() {
           ) : null}
         </section>
       ) : (
-        <div className="mt-6 rounded-xl border border-border bg-surface px-5 py-6 text-sm text-secondary">
+        <div className="mt-6 card px-5 py-6 text-sm text-secondary">
           Load an assigned order to inspect the route visualization
         </div>
       )}
