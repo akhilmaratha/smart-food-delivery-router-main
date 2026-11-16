@@ -97,11 +97,11 @@ export default function RoutingClient() {
           value={orderIdInput}
           onChange={(event) => setOrderIdInput(event.target.value)}
           placeholder="Order ID"
-          className="flex-1 rounded-lg border border-black bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
+          className="flex-1 rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
         />
         <button
           type="submit"
-          className="rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-surface transition-colors hover:bg-secondary"
+          className="rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-secondary"
         >
           Load route
         </button>
@@ -139,7 +139,7 @@ export default function RoutingClient() {
               <button
                 type="button"
                 onClick={() => setDemoOpen((value) => !value)}
-                className="rounded-lg border border-black px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
+                className="rounded-lg border border-border px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
               >
                 {demoOpen ? "Hide DSA demo" : "Show DSA demo"}
               </button>
@@ -181,8 +181,8 @@ export default function RoutingClient() {
               onClick={() => setActiveLeg("pickup")}
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 activeLeg === "pickup"
-                  ? "bg-foreground text-surface"
-                  : "border border-black text-secondary hover:bg-raised"
+                  ? "bg-foreground text-background"
+                  : "border border-border text-secondary hover:bg-raised"
               }`}
             >
               {legTitle.pickup}
@@ -192,8 +192,8 @@ export default function RoutingClient() {
               onClick={() => setActiveLeg("drop")}
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
                 activeLeg === "drop"
-                  ? "bg-foreground text-surface"
-                  : "border border-black text-secondary hover:bg-raised"
+                  ? "bg-foreground text-background"
+                  : "border border-border text-secondary hover:bg-raised"
               }`}
             >
               {legTitle.drop}

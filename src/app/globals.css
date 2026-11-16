@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f4f5;
-  --surface: #ffffff;
-  --raised: #f4f4f5;
-  --foreground: #0a0a0a;
-  --secondary: #404040;
-  --muted: #737373;
-  --border: #000000;
-  --accent: #c2410c;
-  --accent-soft: #fff7ed;
-  --danger: #dc2626;
-  --danger-soft: #fef2f2;
-  --success: #16a34a;
-  --success-soft: #f0fdf4;
-  --route: #c2410c;
-  --node: #0a0a0a;
+  --background: #121212;
+  --surface: #1c1c1e;
+  --raised: #262628;
+  --foreground: #ededed;
+  --secondary: #a1a1a6;
+  --muted: #85858b;
+  --border: #3f3f46;
+  --accent: #ea580c;
+  --accent-soft: #2a1810;
+  --danger: #f87171;
+  --danger-soft: #2a1515;
+  --success: #4ade80;
+  --success-soft: #14241a;
+  --route: #ea580c;
+  --node: #ededed;
 }
 
 @theme inline {
@@ -58,7 +58,7 @@ a {
 }
 
 ::selection {
-  background: #ffedd5;
+  background: #3b2110;
   color: var(--foreground);
 }
 
@@ -69,13 +69,17 @@ button {
   font: inherit;
 }
 
+option {
+  background: var(--surface);
+  color: var(--foreground);
+}
+
 .tabular {
   font-variant-numeric: tabular-nums;
 }
 
-/* Shared card surface: white fill + solid black border */
 .card {
-  border: 1px solid #000000;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background: #ffffff;
+  background: var(--surface);
 }

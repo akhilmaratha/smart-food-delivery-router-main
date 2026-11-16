@@ -57,14 +57,14 @@ export default function OrdersPage() {
             <tbody>
               {data.orders.length ? (
                 data.orders.map((order) => (
-                  <tr key={order.id} className="border-t border-black text-foreground">
+                  <tr key={order.id} className="border-t border-border text-foreground">
                     <td className="px-4 py-3 font-mono text-xs">{order.id}</td>
                     <td className="px-4 py-3">{order.customerName}</td>
                     <td className="px-4 py-3 font-mono text-xs">{order.pickup}</td>
                     <td className="px-4 py-3 font-mono text-xs">{order.drop}</td>
                     <td className="px-4 py-3">{order.assignedRider?.name ?? "—"}</td>
                     <td className="px-4 py-3">
-                      <span className="rounded-md border border-black bg-raised px-2 py-1 text-xs text-secondary">
+                      <span className="rounded-md border border-border bg-raised px-2 py-1 text-xs text-secondary">
                         {order.status}
                       </span>
                     </td>
@@ -73,7 +73,7 @@ export default function OrdersPage() {
                         type="button"
                         disabled={busyOrderId === order.id || order.status === "Delivered"}
                         onClick={() => markDelivered(order.id)}
-                        className="rounded-lg bg-foreground px-3 py-2 text-xs font-medium text-surface transition-colors hover:bg-secondary disabled:opacity-40"
+                        className="rounded-lg bg-foreground px-3 py-2 text-xs font-medium text-background transition-colors hover:bg-secondary disabled:opacity-40"
                       >
                         Mark delivered
                       </button>

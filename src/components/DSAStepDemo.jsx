@@ -74,8 +74,8 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
                 onClick={() => setMode("route")}
                 className={`rounded-lg px-3 py-2 text-sm transition-colors ${
                   isRouteMode
-                    ? "bg-foreground text-surface"
-                    : "border border-black text-secondary hover:bg-raised"
+                    ? "bg-foreground text-background"
+                    : "border border-border text-secondary hover:bg-raised"
                 }`}
               >
                 Shortest hops
@@ -85,8 +85,8 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
                 onClick={() => setMode("algorithm")}
                 className={`rounded-lg px-3 py-2 text-sm transition-colors ${
                   !isRouteMode
-                    ? "bg-foreground text-surface"
-                    : "border border-black text-secondary hover:bg-raised"
+                    ? "bg-foreground text-background"
+                    : "border border-border text-secondary hover:bg-raised"
                 }`}
               >
                 Dijkstra steps
@@ -98,7 +98,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
             type="button"
             onClick={goPrev}
             disabled={prevDisabled}
-            className="rounded-lg border border-black px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised disabled:opacity-40"
+            className="rounded-lg border border-border px-3 py-2 text-sm text-secondary transition-colors hover:bg-raised disabled:opacity-40"
           >
             Prev
           </button>
@@ -106,7 +106,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
             type="button"
             onClick={goNext}
             disabled={nextDisabled}
-            className="rounded-lg bg-foreground px-3 py-2 text-sm font-medium text-surface transition-colors hover:bg-secondary disabled:opacity-40"
+            className="rounded-lg bg-foreground px-3 py-2 text-sm font-medium text-background transition-colors hover:bg-secondary disabled:opacity-40"
           >
             Next
           </button>
@@ -172,7 +172,7 @@ export default function DSAStepDemo({ steps = [], title = "Dijkstra Demo", short
                 className={
                   node === step.visited
                     ? "bg-accent-soft"
-                    : "border-t border-black"
+                    : "border-t border-border"
                 }
               >
                 <td className="px-4 py-3 font-mono text-foreground">{node}</td>

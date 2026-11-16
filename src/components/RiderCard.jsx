@@ -17,7 +17,7 @@ export default function RiderCard({ rider, highlighted = false, actionSlot }) {
         </div>
       </div>
       {typeof rider.distanceToPickup === "number" ? (
-        <div className="mt-4 rounded-lg border border-black bg-raised px-3 py-2 text-sm text-secondary">
+        <div className="mt-4 rounded-lg border border-border bg-raised px-3 py-2 text-sm text-secondary">
           Distance to pickup:{" "}
           <span className="font-mono tabular text-foreground">
             {rider.distanceToPickup}

@@ -129,12 +129,12 @@ export default function RiderPage() {
                     type="button"
                     onClick={() => acceptOrder(rider.id)}
                     disabled={selection.loading}
-                    className="rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-surface transition-colors hover:bg-secondary disabled:opacity-50"
+                    className="rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background transition-colors hover:bg-secondary disabled:opacity-50"
                   >
                     {selection.loading ? "Assigning…" : "Accept order"}
                   </button>
                 ) : (
-                  <p className="rounded-lg border border-black px-3 py-2 text-xs text-muted">
+                  <p className="rounded-lg border border-border px-3 py-2 text-xs text-muted">
                     Greedy check prefers {sortedRiders[0]?.name}
                   </p>
                 )
@@ -175,19 +175,19 @@ export default function RiderPage() {
       {selection.response ? (
         <section className="mt-6 grid gap-4 card p-5">
           <div className="grid gap-3 sm:grid-cols-3">
-            <div className="rounded-lg border border-black bg-raised p-4">
+            <div className="rounded-lg border border-border bg-raised p-4">
               <p className="text-sm text-muted">Assigned rider</p>
               <p className="mt-2 text-xl font-medium text-foreground">
                 {selection.response.assignedRider.name}
               </p>
             </div>
-            <div className="rounded-lg border border-black bg-raised p-4">
+            <div className="rounded-lg border border-border bg-raised p-4">
               <p className="text-sm text-muted">Total distance</p>
               <p className="mt-2 text-xl font-medium tabular text-foreground">
                 {selection.response.totalDistance}
               </p>
             </div>
-            <div className="rounded-lg border border-black bg-raised p-4">
+            <div className="rounded-lg border border-border bg-raised p-4">
               <p className="text-sm text-muted">ETA</p>
               <p className="mt-2 text-xl font-medium tabular text-foreground">
                 {selection.response.eta} mins
@@ -195,11 +195,11 @@ export default function RiderPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-black bg-raised p-4">
+          <div className="rounded-lg border border-border bg-raised p-4">
             <p className="text-sm text-muted">Greedy decision log</p>
             <ul className="mt-3 space-y-2 text-sm text-secondary">
               {selection.response.greedyLog.map((entry) => (
-                <li key={entry} className="rounded-md border border-black bg-surface px-3 py-2">
+                <li key={entry} className="rounded-md border border-border bg-surface px-3 py-2">
                   {entry}
                 </li>
               ))}

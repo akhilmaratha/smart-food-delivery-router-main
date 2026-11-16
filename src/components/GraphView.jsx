@@ -41,15 +41,14 @@ export default function GraphView({ graph, highlightPath = [], currentNode = "" 
                   y1={start.y}
                   x2={end.x}
                   y2={end.y}
-                  stroke={active ? "#c2410c" : "rgba(23, 23, 23, 0.16)"}
+                  stroke={active ? "#ea580c" : "rgba(237, 237, 237, 0.18)"}
                   strokeWidth={active ? 3.5 : 1.5}
                   strokeLinecap="round"
-                  strokeDasharray={active ? "0" : undefined}
                 />
                 <text
                   x={(start.x + end.x) / 2}
                   y={(start.y + end.y) / 2 - 8}
-                  fill="#737373"
+                  fill="#85858b"
                   fontSize="12"
                   fontFamily="var(--font-plex-mono), monospace"
                   textAnchor="middle"
@@ -70,14 +69,14 @@ export default function GraphView({ graph, highlightPath = [], currentNode = "" 
             <g key={node} transform={`translate(${position.x}, ${position.y})`}>
               <circle
                 r={isCurrent ? 20 : isHighlighted ? 17 : 15}
-                fill={isCurrent ? "#c2410c" : isHighlighted ? "#171717" : "#ffffff"}
-                stroke={isCurrent || isHighlighted ? "transparent" : "rgba(23, 23, 23, 0.16)"}
+                fill={isCurrent ? "#ea580c" : isHighlighted ? "#ededed" : "#1c1c1e"}
+                stroke={isCurrent || isHighlighted ? "transparent" : "rgba(237, 237, 237, 0.28)"}
                 strokeWidth={1.5}
               />
               <text
                 y={4}
                 textAnchor="middle"
-                fill={isCurrent || isHighlighted ? "#ffffff" : "#171717"}
+                fill={isCurrent ? "#ffffff" : isHighlighted ? "#121212" : "#ededed"}
                 fontSize="10"
                 fontWeight="500"
                 fontFamily="var(--font-space-grotesk), sans-serif"

@@ -40,12 +40,12 @@ export default function TrackOrderPage() {
           value={orderId}
           onChange={(event) => setOrderId(event.target.value)}
           placeholder="Order ID"
-          className="flex-1 rounded-lg border border-black bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
+          className="flex-1 rounded-lg border border-border bg-background px-3 py-2.5 font-mono text-sm text-foreground outline-none transition-colors focus:border-foreground"
         />
         <button
           type="submit"
           disabled={result.loading}
-          className="rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-surface transition-colors hover:bg-secondary disabled:opacity-50"
+          className="rounded-lg bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-secondary disabled:opacity-50"
         >
           {result.loading ? "Looking up…" : "Track order"}
         </button>

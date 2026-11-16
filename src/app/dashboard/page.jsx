@@ -35,7 +35,7 @@ export default function DashboardPage() {
       actions={
         <Link
           href="/orders"
-          className="rounded-lg border border-black bg-surface px-4 py-2.5 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
+          className="rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-secondary transition-colors hover:bg-raised hover:text-foreground"
         >
           View all orders
         </Link>
@@ -63,7 +63,7 @@ export default function DashboardPage() {
       <section className="mt-6 grid gap-4 lg:grid-cols-[1.4fr_0.6fr]">
         <div className="card p-5">
           <p className="text-sm text-muted">Recent orders</p>
-          <div className="mt-4 divide-y divide-black">
+          <div className="mt-4 divide-y divide-border">
             {data.orders.length ? (
               data.orders.slice(0, 6).map((order) => (
                 <div
